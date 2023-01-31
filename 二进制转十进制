@@ -1,0 +1,25 @@
+从键盘输入二进制串，编写程序将其转换成十进制并输出。
+#include<stdio.h>
+int main()
+{
+	int dec=0;
+	float weight=1.0,sum=0;
+	char ch;
+	while((ch=getchar())!='\n')
+	{
+		if(ch=='.')
+		break;
+		dec=dec*2+(ch-'0');
+	}
+	if(ch=='.')
+	{
+		while((ch=getchar())!='\n')
+		{
+			weight=weight/2;
+			sum=sum+(ch-'0')*weight;
+		}
+		sum=sum+dec;
+		printf("%.3f",sum);
+		return 0;
+	}
+ }
