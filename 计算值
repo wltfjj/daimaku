@@ -1,4 +1,4 @@
-# daimaku
+
 编写函数 int fac(int x)计算 x!的值。在主函数中输入 n 和 m 的值，通过调用函 数 fac 计算Cnm 的值
 #include<stdio.h>
 long fac(int x);
