@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define N 32
+int main()
+{
+	float n;
+	 int m,a[N],i=0,j;
+	scanf("%f",&n);
+	m=(int)n;
+	n=n-m;
+	while(m!=0)
+	{
+		a[i++]=m%2;
+		m=m/2;
+	 } 
+	 for(j=i-1;j>=0;j--)
+	 {
+	 	printf("%d",a[j]);
+	 }
+	 printf(".");
+	 while(n>0)
+	 {
+	 	n=n*2;
+	 	if(n>=1)
+	 	{
+	 		printf("1");
+	 		n=n-1;
+		 }
+		 else printf("0"); 
+	 }
+	 return 0;
+ } 
