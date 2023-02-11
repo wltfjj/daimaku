@@ -1,0 +1,69 @@
+#include <stdio.h> 
+#define RIGHT 1 
+#define DOWN 2 
+#define LEFT 3 
+#define UP 4 
+int main()
+ {
+ int a[100][100]={0},m,n,i,j;
+ char dirct;
+ printf("输入矩阵长度:\n"); 
+scanf("%d",&n); 
+for(i=0;i<n+2;i++)//预留2行，2列，作为围栏以防出界
+ {
+ a[0][i]=-1; 
+a[i][0]=-1;
+ a[n+1][i]=-1; 
+a[i][n+1]=-1; 
+} 
+m=n*n,i=1,j=1;
+dirct=RIGHT;
+while(m>0)
+ {
+ a[i][j]=m--;
+ switch(dirct)
+ {
+case RIGHT:if(a[i][j+1]!=0)
+ { 
+dirct=DOWN; 
+i++;
+} 
+else
+j++;
+break;
+case DOWN:if(a[i+1][j]!=0)
+ { 
+dirct=LEFT;
+ j--;
+} 
+else
+ i++;
+break;
+case LEFT:if(a[i][j-1]!=0) 
+{ 
+dirct=UP; 
+i--;
+} 
+else
+j--;
+break;
+case UP:if(a[i-1][j]!=0)
+{
+ dirct=RIGHT; 
+j++;
+}
+ else
+i--; 
+break; 
+} 
+} 
+for(i=1;i<n+1;i++)
+ {
+ for(j=1;j<n+1;j++) 
+{ 
+printf("%5d",a[i][j]); 
+}
+ printf("\n"); 
+} 
+return 0;
+ } 
