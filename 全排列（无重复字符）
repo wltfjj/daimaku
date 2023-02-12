@@ -1,0 +1,37 @@
+#include <stdio.h> 
+#include <string.h> 
+void p(char x[],int m,int n)
+{
+ int i,j; 
+char temp,t[100]; 
+if(m==n) 
+{ 
+printf("%s\n",x);
+} 
+else 
+{ 
+for(j=m;j<n;j++) 
+{ 
+temp=x[m];
+ 
+x[m]=x[j]; 
+x[j]=temp; 
+p(x,m+1,n);
+temp=x[m];
+x[m]=x[j];
+ x[j]=temp;
+ } 
+} 
+}
+ int main()
+ { 
+char x[100]; 
+int m,n; 
+int a; 
+printf("请输入一个字符串（无重复字母），进行全排列:\n"); 
+gets(x); 
+printf("结果为：\n");
+ a=strlen(x);
+ p(x,0,a); 
+return 0;
+  } 
