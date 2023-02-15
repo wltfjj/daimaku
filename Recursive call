@@ -1,0 +1,41 @@
+#include <stdio.h>
+void f(int n);
+int main() 
+{ 
+int a; 
+printf("输入一个正整数:\n"); 
+scanf("%d",&a); 
+f(a); 
+return 0; 
+}
+void f(int a)
+{ 
+int i,first=0; 
+for(i=15;i>=0;i--)//shortint型占2个字节（16bit）
+ {//对于 short int 型 16bit 的整数 n，判断最高位是否为 1，只要将 n和 10000000 00000000 进行与运算。
+if((a&0x8000)==0x8000) 
+//0X8000是十六进制，相当于二进制 "1000 0000 0000 0000
+ { 
+if(first==0)//第1项前面不要"+"
+ {
+ first=1; 
+} 
+else 
+{ 
+printf("+");
+}
+ printf("2("); 
+if(i<=1) 
+{ 
+printf("%d",i); 
+} 
+else 
+{
+ 
+f(i);
+} 
+printf(")"); 
+} 
+a=a<<1;
+} 
+}
