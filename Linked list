@@ -1,0 +1,104 @@
+#include<stdio.h>
+ 
+#include<stdlib.h>
+ 
+#define N 6  
+struct Node
+{
+ 
+int data; 
+struct Node *next;
+};
+ 
+Node* createList(int n);  
+ 
+ 
+void printList(Node *first);
+ 
+void destoryList(Node *first);
+ 
+int main()
+ 
+{
+ 
+Node *list;
+ 
+printf("请输入%d个数以建立链表\n",N);
+ 
+list=createList(N);
+ 
+printList(list); 
+destoryList(list); 
+printf("\n");  
+ 
+}
+ 
+Node* createList(int n)
+ 
+{  
+   
+    Node *t,*first,*last;  
+ 
+    int i;
+ 
+    
+    first=(Node *)malloc(sizeof(Node));
+ 
+    scanf("%d",&first->data); 
+    last=first;
+   
+   for(i=n-1;i>0;i--)
+ 
+    {
+ 
+ 
+        t=(Node *)malloc(sizeof(Node));
+ 
+        scanf("%d",&t->data);  
+        last->next=t;  
+        last=t; 
+    }
+ 
+    last->next=NULL;
+    return first;
+ 
+}
+ 
+ 
+void printList(Node *first)
+ 
+{
+ 
+   Node *p=first;
+ 
+   while(p!=NULL)
+ 
+   {
+ 
+       printf("%3d",p->data);
+ 
+       p=p->next;
+ 
+   }
+ 
+   printf("\n");
+ 
+}
+ 
+void destoryList(Node *first)
+ 
+{
+ 
+   Node *p=first,*temp;
+ 
+   while(p!=NULL)
+ 
+   {
+ 
+     
+       temp=p->next;  
+       free(p);  
+       p=temp;   
+   }
+ 
+} 
