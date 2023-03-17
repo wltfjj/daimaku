@@ -1,0 +1,23 @@
+package code0204;
+
+public class BreakLabel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+boolean t=true;
+first:{
+	second:{
+		third:{
+			System.out.println("Before the break.");
+			if(t)
+			break second;
+			System.out.println("This won't excute");
+			
+		}
+		System.out.println("This won't excute");
+	}
+	System.out.println("This is afater second block.");
+}
+	}
+
+}
