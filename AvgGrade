@@ -1,0 +1,17 @@
+package code0204;
+
+public class AvgGrade {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int total=0;
+int s[]= {75,69,80,85,93,97,79,77,68,90};
+double avg=0;
+for(int i=0;i<10;i++) {
+	total=total+s[i];
+}
+avg=total/10.0;
+System.out.println("The average score is:"+avg);
+	}
+
+}
