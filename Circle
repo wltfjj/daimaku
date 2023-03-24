@@ -1,0 +1,22 @@
+package code0204;
+
+public class Circle {
+float x,y;
+float radius;
+double getArea() {
+	return radius*radius*Math.PI;
+}
+double getCircumfererce() {
+	return 2*radius*Math.PI;
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Circle c=new Circle();
+c.radius=3;
+c.x=0;
+c.y=0;
+System.out.println("Area="+c.getArea());
+System.out.println("Circumference="+c.getCircumfererce());
+	}
+
+}
