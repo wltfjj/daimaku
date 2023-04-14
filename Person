@@ -1,0 +1,154 @@
+/*
+ * 	编写一个程序，实现Boy、Girl类
+ * 
+ * 	要求
+ * 		1.Boy、Girl类继承Person类
+ * 		2.Boy类拥有私有属性hobby，编写getHobby和setHobby方法,创建空参和全参构造器
+ * 		3.在Boy类中重写eat方法，输出"男孩喜欢吃的食物"，重写work方法，输出"男孩喜欢的工作"
+ * 		4.在Boy类中编写public的game方法，输出"有些男孩喜欢游戏"
+ * 		5.在Boy中重写toString方法，返回name,age和hobby，例如“张三的年龄是20岁,爱好是游戏王”
+ * 		6.Girl类拥有私有属性hobby，编写getHobby和setHobby方法,创建空参和全参构造器
+ * 		7.在Boy类中重写eat方法，输出"女孩喜欢吃的食物"，重写work方法，输出"女孩喜欢的工作"
+ * 		8.在Boy类中编写public的shop方法，输出"有些女孩喜欢购物"
+ * 		9.在Boy中重写toString方法，返回name,age和hobby，例如“张三的年龄是20岁,爱好是游戏王”
+ * 
+ * 	提示
+ * 		1.子类构造方法运行时应当先通过super方法执行父类中的构造方法为指定属性赋值
+ * 			示例：
+ * 			public C extends A(int a, int b, int c){
+ *				super(a,b);
+ * 				this.c = c;
+ * 			}
+ * 
+ * 	示例
+ * 		测试输入：
+ * 			张三 20 游戏王
+ * 			李四 22 购物
+ * 		实际输出：
+ * 			张三的年龄是20岁,爱好是游戏王
+ *			男孩喜欢吃的食物
+ *			男孩喜欢的工作
+ *			有些男孩喜欢游戏
+ *			李四的年龄是22岁,爱好是购物
+ *			女孩喜欢吃的食物
+ *			女孩喜欢的工作
+ *			有些女孩喜欢购物
+ * 				
+ */
+class Boy extends Person{
+    private String hobby;
+    public Boy() {}
+    public String getHobby() {
+    return hobby;
+}
+public void setHobby(String hobby) {
+	this.hobby = hobby;
+}
+    public Boy(String name,int age,String hobby){
+        super(name,age);
+        this.hobby=hobby;
+        
+    }
+    public void eat(){
+        System.out.println("男孩喜欢吃的食物");
+    }
+    public void work(){
+        System.out.println("男孩喜欢的工作");
+    }
+    public void game(){
+        System.out.println("有些男孩喜欢游戏");
+    }
+    public String toString(){
+        return getName()+"的年龄是"+getAge()+"岁"+",爱好是"+hobby;
+    }
+}
+    
+
+
+
+
+
+class Girl extends Person{
+    private String hobby;
+    public Girl() {}
+    public String getHobby() {
+    
+    return hobby;
+}
+public void setHobby(String hobby) {
+	this.hobby = hobby;
+}
+    
+    Girl(String name,int age,String hobby){
+        super(name,age);
+        this.hobby=hobby;
+        
+    }
+    public void eat(){
+        System.out.println("女孩喜欢吃的食物");
+    }
+    public void work(){
+        System.out.println("女孩喜欢的工作");
+     }
+        public void shop(){
+        System.out.println("有些女孩喜欢购物");
+    }
+    public String toString(){
+        return getName()+"的年龄是"+getAge()+"岁"+",爱好是"+hobby;
+    }
+    }
+
+
+
+public class Person {
+	private String name;
+	private int age;
+	
+	public Person() {
+		super();
+	}
+
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+
+	public void eat() {
+		System.out.println("人需要吃饭");
+	}
+	
+	public void work() {
+		System.out.println("人要工作");
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public static void main(String[] args) {
+        Scanner scan =new Scanner(System.in);
+        Boy A=new Boy();
+        A.setName(scan.next());A.setAge(scan.nextInt());A.setHobby(scan.next());
+        Girl B = new Girl();
+        System.out.println(A.toString());
+        A.eat();A.work();A.game();
+        System.out.println(B.toString());
+        B.eat();B.work();B.shop();
+        
+
+
+
+    }
+}
