@@ -1,0 +1,65 @@
+public class Complex{
+    int RealPart,ImaginPart;
+    public Complex(){
+        RealPart=0;ImaginPart=0;
+    }
+    public Complex(int g,int h){
+        RealPart=g;ImaginPart=h;
+    }
+    public Complex complexAdd(Complex a){
+        this.RealPart=this.RealPart+a.RealPart;
+        this.ImaginPart=this.ImaginPart+a.ImaginPart;
+        return this;
+    }
+    public String toString(){
+        if(ImaginPart>0)
+        return (RealPart+"+"+ImaginPart+"i");
+        else if(ImaginPart<0)
+        return (RealPart+""+ImaginPart+"i");
+        else
+        return (RealPart+"");
+    }
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+    Complex p1=new Complex();
+    p1.RealPart=scan.nextInt();p1.ImaginPart=scan.nextInt();
+    Complex p2=new Complex();
+    p2.RealPart=scan.nextInt();p2.ImaginPart=scan.nextInt();
+    Complex p3=new Complex();
+    p3=p1.complexAdd(p2);
+    System.out.print(p3.toString());
+    }
+}
+/*
+ * 	编写一个程序，实现复数类
+ * 
+ * 	要求
+ * 		1.复数类Complex拥有RealPart，ImaginPart两个属性，数据类型均为int型，分别表示复数的实部和虚部
+ * 		2.编写空参和实参的构造函数，在空参构造函数中将复数的实部和虚部都置位0
+ * 		3.实现complexAdd方法，该方法实现两个复数的加法运算，返回值类型为Complex，将运算结果返回给方法调用者
+ * 		4.实现toString方法，该方法将复数以a+bi的形式输出,a为实部值，b为虚部值，返回值类型为String
+ * 
+ * 	提示
+ * 		1.当方法返回值类型为自定义类对象时，可通过return this的方法将参与运算后的对象返回
+ * 		示例：A为自定义类，A中有int型属性money,在类A中可以定义如下方法
+ * 			public A add(A a){
+ * 				this.money = this.money +  a.money;
+ * 				return this;
+ * 			}
+ * 			创建对象并调用方法
+ * 			A a1 = new A();
+ * 			a1.money = 100;
+ * 			A a2 = new A();
+ * 			a2.money = 50;
+ * 			a1.add(a2);
+ * 			执行上述语句后，a1的money变成150
+ * 		2.复数的a+bi形式可以通过组合字符串实现，但是虚部b的取值有>0,=0,<0三种情况，所以需要分开讨论
+ * 			示例：
+ * 				3+5i 可以表示为 3 + "+" + 5 +"i"
+ * 
+ * 	示例
+ * 		测试输入：
+ * 		1 5 2 7
+ * 		测试输出：
+ * 		3+12i
+ */
