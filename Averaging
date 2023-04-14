@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/*
+ *	设计一个学生类，计算学生的平均成绩
+ *	要求：
+ *		1.学生类中包含语文成绩，数学成绩，英语成绩三个属性
+ *		2.在main方法中创建学生类的对象，并输出学生的平均成绩
+ *
+ *	提示：
+ *		1.一个程序（java文件）中可以有多个类，但只能存在一个主类（用public关键字修饰的）
+ *		示例：程序中有A,B,C,D……个类，其中A为主类，以下为合法的书写方式
+ *			public class A{
+ *
+ *			}
+ *			class B{
+ *
+ *			}
+ *			class C{
+ *
+ *			}
+ *			……
+ *		2.类中的成员和方法可以通过“.”符号进行引用
+ *		3.从控制台获取一个浮点型数据可以使用Scanner中的nextDouble方法
+ *		示例：
+ *		Scanner scanner = new Scanner(System.in);
+ *		double data = scanner.nextDouble();
+ *
+ *	示例：
+ *		测试输入：
+ *		80 90 31
+ *		测试输出：
+ *		平均成绩为：67.0
+ */
+public class q1 {
+	
+		double sum(double x,double y,double z){
+        return (x+y+z)/3;
+    }
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+        double c = scanner.nextDouble();
+        q1 o=new q1();
+        System.out.print("平均成绩为："+o.sum(a,b,c));
+
+       
+	}
+}
