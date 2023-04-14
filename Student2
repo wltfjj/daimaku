@@ -1,0 +1,55 @@
+public class Student {
+      String name;
+      String id;
+      String academy,profession;
+      Student(){}
+     Student(String a,String b,String n,String s){
+         id=a;
+         name=b;
+         academy=n;
+         profession=s;
+     }
+     public String getName(){
+         return name;
+     }
+     public String getId(){
+         return id;
+     }
+     public String getAcademy(){
+        return academy;
+     }
+     public String getProfession(){
+        return profession;
+     }
+     public void setName(String name){
+         this.name=name;
+     }
+     public void setId(String id){
+         this.id=id;
+     }
+     public void setAcademy(String academy){
+         this.academy=academy;
+     }
+     public void setProfession(String profession){
+         this.profession=profession;
+     }
+
+     public static void main(String[] args) {
+         Scanner scan=new Scanner(System.in);
+     Student A=new Student(scan.next(),scan.next(),scan.next(),scan.next());
+     Student B=new Student(scan.next(),scan.next(),scan.next(),scan.next());
+         System.out.println("Student [id="+A.getId()+", name="+A.getName()+", academy="+A.getAcademy()+", profession="+A.getProfession());
+         System.out.println("Student [id="+B.getId()+", name="+B.getName()+", academy="+B.getAcademy()+", profession="+B.getProfession());
+     }
+     
+     }
+ 
+/*
+ * 	编写一个程序，实现学生信息类
+ * 	
+ *	要求
+ *		1.学生类Student包含id，name，academy，profession四个属性，且属性类型均为String
+ *		2.编写空参和全参的构造方法
+ *		3.编写所有属性的get和set方法,get方法的返回值类型为String,set方法返回值类型为void
+ *			例如：name的get,set方法名分别为getName,setName
+ */
