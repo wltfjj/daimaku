@@ -1,0 +1,34 @@
+package step2;
+
+import java.util.Scanner;
+/*
+ * 	编写一个程序，求一维数组中元素的平均值。
+ * 	测试输入：
+ * 	3 20.3 80.2 12.0
+ * 		描述：3表示一维数组的长度，30 80 12则是数组各元素的值
+ * 	预计输出：
+ * 	37.5
+ */
+public class q2 {
+    public static void main(String[] args){
+        int i;
+        double k[]=input_form_console();double sum=0;
+        for(i=0;i<k.length;i++){
+            sum=sum+k[i];
+        }
+        sum=sum/(i);
+        System.out.print(sum);
+    }
+	
+	 * 	input_form_console方法用于从控制台读取一个一维数组
+	 */
+	public static double[] input_form_console() {
+		Scanner scanner = new Scanner(System.in);
+		int m = scanner.nextInt();
+		double arr[] = new double[m];
+		for (int i = 0; i < m; i++) {
+			arr[i] = scanner.nextDouble();
+		}
+		return arr;
+	}
+}
