@@ -1,0 +1,39 @@
+package step1;
+
+import java.util.Scanner;
+/*
+ * 	编写一个程序，找出一维数组中的最大值并输出。
+ * 	测试输入：
+ * 	3 20 80 12
+ * 		描述：3表示一维数组的长度，30 80 12则是数组各元素的值
+ * 	预计输出：
+ * 	80
+ */
+public class q1 {
+   
+    public static void main(String[] args) {
+        int k[]=input_form_console();
+     int max=k[0];int index=0;
+     for(int j=1;j<k.length;j++){
+         if(k[j]>max){
+             max=k[j];
+             index=j;
+         }
+     }
+     System.out.print(max);
+     }
+
+	
+	 * 	input_form_console方法用于从控制台读取一个一维数组
+	 */
+	public static int[] input_form_console() {
+		Scanner scanner = new Scanner(System.in);
+		int m = scanner.nextInt();
+		int arr[] = new int[m];
+		for (int i = 0; i < m; i++) {
+			arr[i] = scanner.nextInt();
+		}
+		return arr;
+	}
+}
+ 
