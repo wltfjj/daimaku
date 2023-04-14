@@ -1,0 +1,48 @@
+package step3;
+
+import java.util.Scanner;
+/*
+ * 	编写一个程序，实现二维数组行列转换。
+ * 	测试输入：
+ * 	2 3 1 2 3 4 5 6
+ * 		描述：前2个数字2,3表示数组的行数和列数，1 2 3 4 5 6表示二维数组各元素值
+ * 	预计输出：
+ * 	1 4 2 5 3 6
+ * 		使用图形可以描述为：
+ * 		1 2 3
+ * 		4 5 6
+ * 		转换后为：
+ * 		1 4
+ * 		2 5
+ *  	3 6
+ */
+public class q3 {
+     public static void main(String[] args){
+        int k[][]=input_form_console();
+        for(int j=0;j<k[0].length;j++){
+            for(int i=0;i<k.length;i++)
+               System.out.print(k[i][j]+" ");
+        }
+            }
+	
+	 * 	 提示：可以通过以下方式获取二维数组的行数和列数,arr为二维数组
+	 *  int row = arr.length;
+		int column = arr[0].length;
+	 */
+	 
+
+	 * 	input_form_console方法用于从控制台读取一个二维数组
+	 */
+	public static int[][] input_form_console() {
+		Scanner scanner = new Scanner(System.in);
+		int m = scanner.nextInt();
+		int n = scanner.nextInt();
+		int arr[][] = new int[m][n];
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				arr[i][j] = scanner.nextInt();
+			}
+		}
+		return arr;
+	}
+}
