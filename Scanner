@@ -1,0 +1,38 @@
+ package step1;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * 	问题描述：编写一个程序，将输入的字符存入ArrayList，输出指定位置的字符
+ * 
+ * 	要求
+ * 		1.输入的第一个整数为输入的字符总个数
+ * 		2.输入的第二个整数为想要输出字符的位置
+ * 
+ * 	提示
+ * 		1.可以使用Scanner类实现从键盘读入字符
+ * 			例如：
+ * 			Scanner scanner = new Scanner(System.in);
+ * 			int test1 = scanner.nextInt(); //读入整数
+ * 			int test2 = scanner.next(); //读入任意字符
+ * 		2.创建ArrayList对象时需要导入指定包
+ * 		3.注意列表下标与第x个元素之间的关系
+ * 
+ * 	示例
+ * 		测试输入：5 3 i love china forever 666
+ * 		测试输出：china
+ */
+public class Q1 {
+    public static void main(String[] args) {
+Scanner scanner=new Scanner(System.in);
+int i=0;ArrayList al = new ArrayList();
+int t1=scanner.nextInt();
+int t3=scanner.nextInt();
+    for(i=0;i<t1;i++){
+     String t2=scanner.next();
+     al.add(t2);
+}
+Object v = al.get(t3-1);
+System.out.println(v);
+}
+}
