@@ -1,0 +1,63 @@
+ package step2;
+import java.util.Set;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Iterator;
+import java.util.Scanner;
+
+/*
+ * 	问题描述：编写一个程序，创建一个集合存入学生的信息，输出所有学生信息，并找到学号最大的学生的姓名
+ * 
+ * 	要求
+ * 		1.使用Map实现学生信息存储功能
+ * 		2.输入的第一个整数为学生的个数
+ * 		3.学生有学号和姓名两个信息，输入时以空格分开
+ * 
+ * 	提示
+ * 		1.可以使用Scanner类实现从键盘读入字符
+ * 			例如：
+ * 			Scanner scanner = new Scanner(System.in);
+ * 			int test1 = scanner.nextInt(); //读入整数
+ * 			int test2 = scanner.next(); //读入任意字符
+ * 		2.Map以键值对的方式存放信息，且“键”为String类型
+ * 		3.String型与int型可以通过String.valueOf(test)进行转换
+ * 		4.注意导包
+ * 
+ * 	实例
+ * 		测试输入
+ * 			4 1001 张三 1008 李四 1007 赵六 1002 王五
+ * 		测试输出
+ * 			{1008=李四, 1007=赵六, 1002=王五, 1001=张三}
+ * 			学号最大的是李四
+ */
+public class Q2 {
+    public static void main(String[] args) {
+HashMap h=new HashMap();
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		for(int i=0;i<a;i++) {
+			h.put(sc.next(), sc.next());
+		}
+		System.out.println(h);
+		Set s=h.keySet();
+		Iterator<String> i=s.iterator();
+		int in[]=new int[a];
+		int j=0;
+		while(i.hasNext())
+		{
+			in[j]=Integer.valueOf(i.next());
+			j++;
+		}
+		for(int k=0;k<in.length;k++) {
+			for(int l=0;l<in.length-1;l++) {
+			if(in[l]<in[l+1]) {
+				int temp=in[l];
+				in[l]=in[l+1];
+				in[l+1]=temp;
+			}
+			}
+		}
+		String str=String.valueOf(in[0]);
+		System.out.print("学号最大的是"+h.get(str));
+	}
+}
