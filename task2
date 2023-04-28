@@ -1,0 +1,53 @@
+ package step2;
+import java.io.*;
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+/*
+ * 	问题描述：编写一个程序，自定义异常类，实现除零异常和其他异常的捕获与处理
+ * 
+ * 	要求
+ * 		1.依次输入两个整数进行除法运算
+ * 		2.出现异常时，如果是“除零”异常则输出“除零异常！”，否则输出“其他异常”
+ * 		3.未出现异常时，将结果正常输出
+ * 
+ * 	提示
+ * 		1.可以使用Scanner类实现从键盘读入字符
+ * 			例如
+ * 			Scanner scanner = new Scanner(System.in);
+ * 			int test1 = scanner.nextInt(); //读入整数
+ * 		2.在一个java文件中可以有多个类，但只能有一个public关键字修饰的
+ * 		3.可以通过继承Exception类自定义异常类
+ * 
+ * 	示例
+ * 		测试输入
+ * 		3 2
+ * 		测试输出
+ * 		结果为1
+ * 
+ * 		测试输入
+ * 		3 0
+ * 		测试输出
+ * 		除零异常！
+ * 
+ * 		测试输入
+ * 		hhh 2
+ * 		测试输出
+ * 		其他异常
+ */
+public class Q2 {
+     public static void main(String[] args) throws IOException {
+         Scanner scanner = new Scanner(System.in);
+         try{
+             String t1 = scanner.next();int k,m;
+             String t2 = scanner.next();
+             k=Integer.parseInt(t1);m=Integer.parseInt(t2);
+             int result=k/m;
+             System.out.println("结果为"+result);
+         }catch(ArithmeticException e){
+             System.out.println("除零异常！");
+         }catch(NumberFormatException e){
+             System.out.println("其他异常");
+         }
+
+}}
