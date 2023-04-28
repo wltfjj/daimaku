@@ -1,0 +1,47 @@
+package step1;
+import java.io.*;
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+/*
+ * 	问题描述：编写一个程序，实现除零异常的捕获与处理
+ * 
+ * 	要求
+ * 		1.依次输入两个整数进行除法运算
+ * 		2.无论程序是否出现异常最后都要输出“程序执行完毕“
+ * 	
+ * 	提示
+ * 		1.可以使用Scanner类实现从键盘读入字符
+ * 			例如
+ * 			Scanner scanner = new Scanner(System.in);
+ * 			int test1 = scanner.nextInt(); //读入整数
+ * 
+ * 	例如
+ * 		测试输入：
+ * 		2 0
+ * 		测试输出：
+ * 		除零异常！
+ * 		程序执行完毕
+ * 
+ * 		测试输入：
+ * 		3 2
+ * 		测试输出
+ * 		1
+ * 		程序执行完毕
+ */
+public class Q1 {
+    public static void main(String[] args) throws IOException {
+    Scanner scanner = new Scanner(System.in);
+    int t1 = scanner.nextInt();
+    int t2 = scanner.nextInt();
+    int result;
+    try{
+        result=t1/t2;
+        System.out.println(result);
+        System.out.println("程序执行完毕");
+    }catch(ArithmeticException e){
+        System.out.println("除零异常！");
+        System.out.println("程序执行完毕");
+    }
+}
+}
