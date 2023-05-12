@@ -1,0 +1,23 @@
+package step1;
+import java.util.Scanner;
+/*
+ * 	问题描述：编写一个程序，从键盘输入两个数并输出其乘法运算的结果
+ * 
+ * 	要求
+ * 		1.依次从键盘输入两个数
+ * 
+ * 	示例
+ * 		测试输入
+ * 		1.752 4
+ * 		测试输出
+ * 		7.008
+ */
+
+public class Q1 {
+        public static void main(String[] args){
+     Scanner scan=new Scanner(System.in);
+     double a=scan.nextDouble();
+     double b=scan.nextDouble();
+     double result = a * b;
+     System.out.println(result);
+}}
