@@ -1,0 +1,39 @@
+package step2;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+
+
+/*
+ * 	问题描述：编写一个程序，读出指定文件中的内容并输出
+ * 
+ * 	要求
+ * 		1.要读取的文件的文件名由键盘输入
+ * 
+ * 	示例
+ * 		测试输入
+ * 		c.txt
+ * 		测试输出
+ * 		hello world!
+ *  
+ */
+
+
+public class Q2 {
+	public static void main(String[] args) throws IOException{
+        Scanner scan=new Scanner(System.in);
+        String k=scan.next();
+        FileInputStream j=new FileInputStream(k);
+        InputStreamReader p=new InputStreamReader(j);
+        BufferedReader o=new BufferedReader(p); 
+        String h="";
+        while((h=o.readLine())!=null){
+            System.out.println(h);
+        }
+    }
+}
