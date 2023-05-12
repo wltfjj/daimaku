@@ -1,0 +1,15 @@
+package code0801;
+import java.util.Scanner;
+public class ScannerSystemIn {
+
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+		Scanner sin = new Scanner(System.in);
+			int a=sin.nextInt();
+			double b=sin.nextDouble();
+			double result=a*b;
+			System.out.println("a*b="+result);
+		
+	}
+
+}
