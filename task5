@@ -1,0 +1,39 @@
+package step1;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+/*
+ * 	问题描述：编写一个程序，实现文本文件的复制。
+ * 
+ * 	要求：
+ * 		1.要复制的文件名为a.txt，生成的文件的名称是a_copy.txt
+ * 		2.程序中实现“文本文件的复制”操作即可，控制台的输出是由教师已经编写的Test.java完成的，Test.java的功能是读取a_copy.txt
+ *      文本文件中的内容并输出到控制台
+ * 		3.将代码写在fun方法体中！！！！
+ * 
+ * 	示例
+ * 		无测试输入和输出
+ * 
+ */
+public class Q1 {
+	public void fun() {
+         String a = "a.txt";
+         String b = "a_copy.txt";
+        try {
+            FileReader reader = new FileReader(a);
+            FileWriter writer = new FileWriter(b);
+            int ch;
+            while ((ch = reader.read()) != -1) {
+                writer.write(ch);
+            }
+            reader.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        
+ }
