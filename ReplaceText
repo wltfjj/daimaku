@@ -1,0 +1,32 @@
+package code0801;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+public class ReplaceText {
+
+	public static void main(String[] args)throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		File f;
+		String filename;
+		System.out.println("输入文件名:");
+		Scanner console=new Scanner(System.in);
+		filename=console.nextLine();
+		f=new File(new File("src/code0801"),filename);
+		System.out.println("输入要替换的字符串:");
+		String pattern=console.nextLine();
+		System.out.println("输入要替换的结果:");
+		String result=console.nextLine();
+		PrintWriter pw=new PrintWriter("replace.txt");
+		Scanner reader=new Scanner(f);
+		while(reader.hasNextLine())
+		{
+			String s1=reader.nextLine();
+			String s2=s1.replaceAll(pattern, result);
+			pw.println(s2);
+		}
+		console.close();
+		pw.close();
+	}
+
+}
