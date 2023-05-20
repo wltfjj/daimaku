@@ -1,0 +1,46 @@
+package step2;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+/*
+ * 	问题描述：编写一个程序，实现字符流与字节流的转换。
+ * 
+ * 	要求
+ * 		1.文件b.txt默认编码是gb2312，使用默认方式读取会出现乱码，复制b.txt的内容，以UTF-8的编码保存至b_copy.txt中
+ * 		2.控制台的输出是由教师已经编写的Test2.java完成的，Test2.java的功能是读取b_copy.txt
+ * 			文本文件中的内容并输出到控制台
+ * 		3.将代码写在fun方法体中！！！！
+ * 
+ * 	示例
+ * 		无测试输入和输出
+ */
+public class Q2 {
+	public void fun() {
+		 String b1 = "b.txt";
+         String b2 = "b_copy.txt";
+        try {
+            File b=new File("b.txt");
+            FileInputStream fin=new FileInputStream(b1);
+            FileOutputStream fout=new FileOutputStream(b2);
+            InputStreamReader isr=new InputStreamReader(fin,"gb2312");
+            OutputStreamWriter osw=new OutputStreamWriter(fout,"UTF-8");
+            int n=(int)(b.length()/10);
+            char a[]=new char[n];
+            int count=0;
+            while ((count=isr.read(a,0,n))!=-1) {
+                osw.write(a,0,count);
+            }
+            isr.close();
+            osw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+        
+}
