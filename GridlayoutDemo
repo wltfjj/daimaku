@@ -1,0 +1,25 @@
+package code1001;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+public class GridlayoutDemo extends JFrame {
+	 private JButton button1=new JButton("按键1");
+	 private JButton button2=new JButton("按键2");
+	 private JButton button3=new JButton("按键3");
+	 private JButton button4=new JButton("按键4");
+	 public GridlayoutDemo() {
+	    setSize(300,300);
+	    setLocation(400,400);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    setLayout(new GridLayout(2,2));
+	    add(button1);
+	    add(button2);
+	    add(button3);
+	    add(button4);
+	}
+	public static void main(String arg[]) {
+		// TODO Auto-generated method stub
+		GridlayoutDemo frame=new GridlayoutDemo();
+        frame.setVisible(true);
+	}
+}
